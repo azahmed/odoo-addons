@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="prop1" model="estate_property">
+        <field name="name">Tarneit Property</field>
+        <field name="description">Some Desc</field>
+        <field name="bedrooms">4</field>
+        <field name="expected_price">400000</field>
+    </record>
+</odoo>

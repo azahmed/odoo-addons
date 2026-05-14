@@ -26,7 +26,6 @@
                 <field name="description"/>
                 <field name="postcode"/>
                 <field name="state"/>
-                <field name="property_type_id"/>
             </list>
         </field>
     </record>
