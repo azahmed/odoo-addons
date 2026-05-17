@@ -63,7 +63,7 @@
                                 <field name="bedrooms"/>
                             </group>
                         </page>
-                        <page string="Offersxxx">
+                        <page string="Offers">
                             <group>
                                 <field name="offer_ids"/>
                             </group>
