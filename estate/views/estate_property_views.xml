@@ -48,6 +48,7 @@
                             <field name="postcode"/>
                             <field name="date_availability"/>
                             <field name="state"/>
+                            <field name="tag_ids" widget="many2many_tags"/>
                         </group>
                         <group>
                             <field name="expected_price"/>
