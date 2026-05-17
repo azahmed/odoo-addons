@@ -54,7 +54,6 @@
                             <field name="buyer_id"/>
                             <field name="salesPerson_id"/>
                             <field name="property_type_id"/>
-                            <field name="offer_ids"/>
                         </group>
                     </group>
                     <notebook>
@@ -64,11 +63,11 @@
                                 <field name="bedrooms"/>
                             </group>
                         </page>
-<!--                        <page string="Offers">-->
-<!--                            <group>-->
-<!--                                <field name="offer_ids"/>-->
-<!--                            </group>-->
-<!--                        </page>-->
+                        <page>
+                            <group>
+                                <field name="offer_ids"/>
+                            </group>
+                        </page>
                     </notebook>
                 </sheet>
             </form>
