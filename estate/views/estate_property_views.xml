@@ -64,7 +64,7 @@
                             </group>
                         </page>
                         <page>
-                            <group>
+                            <group string="Offer Onw Only">
                                 <field name="offer_ids"/>
                             </group>
                         </page>
