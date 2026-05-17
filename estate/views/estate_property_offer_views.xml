@@ -6,4 +6,17 @@
         <field name="view_mode">list,form</field>
     </record>
 
+    <record id="estate_property_offer_list" model="ir.ui.view">
+        <field name="name">estate.property.offer.view.list</field>
+        <field name="model">estate_property_offer</field>
+        <field name="arch" type="xml">
+            <list string="Offers" create="True">
+                <field name="price"/>
+                <field name="partner_id"/>
+                <field name="status"/>
+            </list>
+        </field>
+    </record>
+
+
 </odoo>
