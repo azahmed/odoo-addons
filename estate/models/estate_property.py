@@ -36,4 +36,4 @@ class EstateProperty(models.Model):
             copy=False)
     active = fields.Boolean(default=True)
     partner_id = fields.Many2one("res.partner", string="Partner")
-    property_type_id = fields.Many2one("estate_property_type", string="Property Type doda")
+    property_type_id = fields.Many2one("estate_property_type", string="Property Type")
