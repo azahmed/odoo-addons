@@ -26,6 +26,9 @@
                 <field name="description"/>
                 <field name="postcode"/>
                 <field name="state"/>
+                <field name="buyer_id"/>
+                <field name="salesPerson_id"/>
+                <field name="property_type_id"/>
             </list>
         </field>
     </record>
@@ -49,7 +52,8 @@
                         <group>
                             <field name="expected_price"/>
                             <field name="selling_price"/>
-                            <field name="partner_id"/>
+                            <field name="buyer_id"/>
+                            <field name="salesPerson_id"/>
                             <field name="property_type_id"/>
                         </group>
                     </group>
