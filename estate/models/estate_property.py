@@ -24,8 +24,8 @@ class EstateProperty(models.Model):
     garden_area = fields.Integer()
     garden_orientation = fields.Selection(
             string='Orientation',
-            selection=[('north', 'North'), ('south', 'South')],
-            help="Type is used to separate Leads and Opoo")
+            selection=[('north', 'North'), ('south', 'South'), ('east', 'East'), ('west', 'West')],
+            help="Which way does the garden face?")
 
     state = fields.Selection(
             string='State',
@@ -52,3 +52,12 @@ class EstateProperty(models.Model):
     def _compute_best_price(self):
         for record in self:
             record.best_price = max(record.mapped("offer_ids.price"))
+
+    @api.depends("garden_orientation")
+    def _onchange_garden_orientation(self):
+        self.garden_area = 666
+
+    @api.depends("garden_area")
+    def _onchange_garden_area(self):
+        self.garden_orientation = "north"
+
