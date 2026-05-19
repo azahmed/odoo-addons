@@ -8,5 +8,7 @@ class EstatePropertyTag(models.Model):
     _description = "Estate Property Tag"
 
     name = fields.Char(required=True)
+    doda = fields.Char()
+
 
     #property_ids = fields.One2many('estate.property', 'property_type_id', string='Materials')
