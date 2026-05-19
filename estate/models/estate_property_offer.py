@@ -4,7 +4,7 @@ from email.policy import default
 
 from odoo import api, fields, models
 from pkg_resources import require
-from datetime import datetime
+from datetime import datetime, timedelta
 today = fields.Datetime.now()
 
 
@@ -27,14 +27,14 @@ class EstatePropertyOffer(models.Model):
     def _compute_date_deadline(self):
         for record in self:
             if record.create_date is None:
-                record.date_deadline = today + datetime.timedelta(record.validity)
+                record.date_deadline = today + timedelta(record.validity)
             else:
-                record.date_deadline = record.create_date + datetime.timedelta(record.validity)
+                record.date_deadline = record.create_date + timedelta(record.validity)
 
     @api.depends("create_date", "validity")
     def _inverse_date_deadline(self):
         for record in self:
             if record.create_date is None:
-                record.date_deadline = today + datetime.timedelta(record.validity)
+                record.date_deadline = today + timedelta(record.validity)
             else:
-                record.date_deadline = record.create_date + datetime.timedelta(record.validity)
+                record.date_deadline = record.create_date + timedelta(record.validity)
