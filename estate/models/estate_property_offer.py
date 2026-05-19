@@ -27,7 +27,7 @@ class EstatePropertyOffer(models.Model):
     def _compute_date_deadline(self):
         for record in self:
             print("ThisIsASRAR:", record.create_date)
-            if record.create_date is None:
+            if not record.create_date:
                 record.date_deadline = today + timedelta(record.validity)
             else:
                 record.date_deadline = record.create_date + timedelta(record.validity)
