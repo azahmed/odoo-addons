@@ -12,6 +12,7 @@
             <list string="me Offers" create="True">
                 <field name="price"/>
                 <field name="status"/>
+                <field name="partner_id"/>
             </list>
         </field>
     </record>
