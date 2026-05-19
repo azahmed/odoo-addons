@@ -1,5 +1,5 @@
 {
-    'name': "A Module by Asrar",
+    'name': "A Module by AZ Asrar",
     'depends': ['base'],
     'application': True,
     'data': [
