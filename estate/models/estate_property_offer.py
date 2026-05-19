@@ -24,8 +24,8 @@ class EstatePropertyOffer(models.Model):
 
     @api.depends("create_date", "validity")
     def _inverse_date_deadline(self):
-        # for record in self:
-        #     if record.create_date is None:
-        #         record.date_deadline = today + record.validity
-        #     else:
-        #         record.date_deadline = record.create_date + record.validity
+        for record in self:
+            if record.create_date is None:
+                record.date_deadline = today + record.validity
+            else:
+                record.date_deadline = record.create_date + record.validity
