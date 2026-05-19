@@ -26,7 +26,7 @@ class EstatePropertyOffer(models.Model):
     @api.depends("create_date", "validity")
     def _compute_date_deadline(self):
         for record in self:
-            print("ThisIsASRAR:" + record.create_date)
+            print("ThisIsASRAR:" % record.create_date)
             if record.create_date is None:
                 record.date_deadline = today + timedelta(record.validity)
             else:
