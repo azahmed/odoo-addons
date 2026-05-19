@@ -8,6 +8,7 @@
             <menuitem id="estate_property_type_menu_action" name="Property Types" action="estate_property_type_action"/>
             <menuitem id="estate_property_tag_menu_action" name="Property Tags" action="estate_property_tag_action"/>
             <menuitem id="estate_property_offer_menu_action" name="Property Offers" action="estate_property_offer_action"/>
+            <menuitem id="estate_property_asrar_menu_action" name="Property Asrar" action="estate_property_asrar_action"/>
         </menuitem>
     </menuitem>
 </odoo>
