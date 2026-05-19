@@ -2,6 +2,8 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from odoo import fields, models
+from pkg_resources import require
+
 
 class EstatePropertyOffer(models.Model):
     _name = "estate_property_offer"
@@ -12,7 +14,7 @@ class EstatePropertyOffer(models.Model):
         string='Status',
         selection=[('accepted', 'Accepted'), ('refused', 'Refused')],
         help="Refused or Accepted")
-    # partner_id = fields.Many2one("res.partner", string="Partner")
-    property_id = fields.Many2one("estate_property", string="Property")
+    partner_id = fields.Many2one("res.partner", string="Partner")
+    property_id = fields.Many2one("estate_property", string="Property", required=True)
 
     #property_ids = fields.One2many('estate.property', 'property_type_id', string='Materials')
