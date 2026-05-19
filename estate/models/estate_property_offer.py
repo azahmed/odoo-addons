@@ -12,7 +12,7 @@ class EstatePropertyOffer(models.Model):
         string='Status',
         selection=[('accepted', 'Accepted'), ('refused', 'Refused')],
         help="Refused or Accepted")
-    partner_id = fields.Many2one("res.partner", string="Partner")
-    property_id = fields.Many2one("estate_property", string="Property")
+    # partner_id = fields.Many2one("res.partner", string="Partner")
+    # property_id = fields.Many2one("estate_property", string="Property")
 
     #property_ids = fields.One2many('estate.property', 'property_type_id', string='Materials')

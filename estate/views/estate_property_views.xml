@@ -63,11 +63,11 @@
                                 <field name="bedrooms"/>
                             </group>
                         </page>
-                        <page string="Offer Onw Only">
-                            <group expand="1">
-                                <field name="offer_ids"/>
-                            </group>
-                        </page>
+<!--                        <page string="Offer Onw Only">-->
+<!--                            <group expand="1">-->
+<!--                                <field name="offer_ids"/>-->
+<!--                            </group>-->
+<!--                        </page>-->
                     </notebook>
                 </sheet>
             </form>
