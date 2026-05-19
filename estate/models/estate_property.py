@@ -53,7 +53,7 @@ class EstateProperty(models.Model):
         for record in self:
             record.best_price = max(record.mapped("offer_ids.price"))
 
-    @api.depends("garden_orientation")
+    @api.onchange("garden_orientation")
     def _onchange_garden_orientation(self):
         print("ThisIsASRAR onchange:", self.garden_area)
         self.garden_area = 666
