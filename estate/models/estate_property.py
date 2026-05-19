@@ -23,7 +23,7 @@ class EstateProperty(models.Model):
     garden = fields.Boolean()
     garden_area = fields.Integer()
     garden_orientation = fields.Selection(
-            string='Type',
+            string='Orientation',
             selection=[('north', 'North'), ('south', 'South')],
             help="Type is used to separate Leads and Opoo")
 
