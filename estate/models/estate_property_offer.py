@@ -39,6 +39,7 @@ class EstatePropertyOffer(models.Model):
     def action_estate_offer_confirm(self):
         for record in self:
             self.property_id.selling_price = self.price
+            self.property_id.buyer_id = self.partner_id
             self.status = 'accepted' # no 'Accepted'
             # raise UserError("Confirming Mate")
 
