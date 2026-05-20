@@ -42,6 +42,7 @@
                     <button name="action_estate_property_sold" type="object" string="Sold"/>
                     <button name="action_estate_property_cancelled" type="object" string="Cancel"/>
                     <button name="%(estate.estate_property_menu_action)d" type="action" string="New Property" res_model="estate_property" />
+                    <button name="asrar_action" type="ir.actions.act_url" url="www.pic-jed.com" />
 <!--                    <button name="estate.estate_property_menu_action" type="action" string="New Property"/> -->
                 </header>
                 <sheet>
