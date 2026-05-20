@@ -61,10 +61,10 @@ class EstateProperty(models.Model):
     def _onchange_garden_area(self):
         self.garden_orientation = "north"
 
-class EstatePropertyAction(models.Model):
-    _name = "estate_property_action"
-
-    name = fields.Char()
+# class EstatePropertyAction(models.Model):
+#     _name = "estate_property_action"
+#
+#     name = fields.Char()
 
     def action_estate_property_sold(self):
         for record in self:
