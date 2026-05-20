@@ -55,7 +55,6 @@ class EstateProperty(models.Model):
 
     @api.onchange("garden_orientation")
     def _onchange_garden_orientation(self):
-        print("ThisIsASRAR onchange:", self.garden_area)
         self.garden_area = 666
 
     @api.onchange("garden_area")
