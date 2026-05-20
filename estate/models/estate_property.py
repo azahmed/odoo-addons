@@ -3,6 +3,7 @@
 
 from odoo.tools import date_utils
 from odoo import api, fields, models
+from odoo.exceptions import UserError
 today = fields.Datetime.now()
 
 class EstateProperty(models.Model):
@@ -61,14 +62,14 @@ class EstateProperty(models.Model):
     def _onchange_garden_area(self):
         self.garden_orientation = "north"
 
-# class EstatePropertyAction(models.Model):
-#     _name = "estate_property_action"
-#
-#     name = fields.Char()
-
     def action_estate_property_sold(self):
         for record in self:
             record.name = record.name + "Sold"
+            if record.state == 'Sold':
+                raise UserError("Already Sold")
+            if record.state == 'Cancelled':
+                raise UserError("Cannot sell, already Cancelled")
+
         return True
 
     def action_estate_property_cancelled(self):
