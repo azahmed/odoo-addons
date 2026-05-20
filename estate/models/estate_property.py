@@ -52,8 +52,10 @@ class EstateProperty(models.Model):
     @api.depends("offer_ids.price")
     def _compute_best_price(self):
         for record in self:
-            if not record.offer_ids:
+            try:
                 record.best_price = max(record.mapped("offer_ids.price"))
+            except ValueError:
+                record.best_price = 0
 
     @api.onchange("garden_orientation")
     def _onchange_garden_orientation(self):
