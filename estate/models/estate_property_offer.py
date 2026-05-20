@@ -5,6 +5,7 @@ from email.policy import default
 from odoo import api, fields, models
 from pkg_resources import require
 from datetime import datetime, timedelta
+from odoo.exceptions import UserError
 today = fields.Datetime.now()
 
 
@@ -34,3 +35,9 @@ class EstatePropertyOffer(models.Model):
     def _inverse_date_deadline(self):
         for record in self:
             record.validity = (record.date_deadline - today.date()).days
+
+    def action_estate_offer_confirm(self):
+        for record in self:
+            raise UserError("Confirming Mate")
+
+        return True
