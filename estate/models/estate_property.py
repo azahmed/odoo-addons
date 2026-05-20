@@ -66,12 +66,12 @@ class EstatePropertyAction(models.Model):
 
     name = fields.Char()
 
-    def estate_property_sold(self):
+    def action_estate_property_sold(self):
         for record in self:
             record.name = record.name + "Sold"
         return True
 
-    def estate_property_cancelled(self):
+    def action_estate_property_cancelled(self):
         for record in self:
             record.name = record.name + "Cancelled"
         return True
