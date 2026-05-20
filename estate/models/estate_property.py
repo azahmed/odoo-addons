@@ -61,3 +61,17 @@ class EstateProperty(models.Model):
     def _onchange_garden_area(self):
         self.garden_orientation = "north"
 
+class EstatePropertyAction(models.Model):
+    _name = "estate_property_action"
+
+    name = fields.Char()
+
+    def estate_property_sold(self):
+        for record in self:
+            record.name = record.name + "Sold"
+        return True
+
+    def estate_property_cancelled(self):
+        for record in self:
+            record.name = record.name + "Cancelled"
+        return True
