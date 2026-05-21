@@ -11,14 +11,7 @@ class EstatePropertyTag(models.Model):
     doda = fields.Char()
 
     _sql_constraints = [
-        ('unique_name', 'UNIQUE(name)', 'The name must be unique!')
+        ('unique_name', 'UNIQUE(name)', 'Cannot repeat tags Dumb Ass!')
     ]
-    # _unique_name = models.Constraint(
-    #     'UNIQUE(name)',
-    #     'Cannot repeat tags Dumb Ass',
-    # )
-    # _sql_constraints = [
-    #     ('unique_name', 'CHECK(percentage >= 0 AND percentage <= 100)',
-    #      'The percentage of an analytic distribution should be between 0 and 100.')
-    # ]
+
     #property_ids = fields.One2many('estate.property', 'property_type_id', string='Materials')
