@@ -2,6 +2,7 @@
     'name': "A Module by AZ Asrar 3.0",
     'depends': ['base'],
     'application': True,
+    'License': 'LGPL-3',
     'data': [
         'security/ir.model.access.csv',
         'data/estate_property_data.xml',
