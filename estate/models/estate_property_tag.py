@@ -10,10 +10,10 @@ class EstatePropertyTag(models.Model):
     name = fields.Char(required=True)
     doda = fields.Char()
 
-    _unique_name = models.Constraint(
-        'UNIQUE(name)',
-        'Cannot repeat tags Dumb Ass',
-    )
+    # _unique_name = models.Constraint(
+    #     'UNIQUE(name)',
+    #     'Cannot repeat tags Dumb Ass',
+    # )
     # _sql_constraints = [
     #     ('unique_name', 'CHECK(percentage >= 0 AND percentage <= 100)',
     #      'The percentage of an analytic distribution should be between 0 and 100.')
