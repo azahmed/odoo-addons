@@ -10,8 +10,8 @@ class EstatePropertyTag(models.Model):
     name = fields.Char(required=True)
     doda = fields.Char()
 
-    _name_unique = models.Constraint(
-        'unique(name)',
-        'Cannot repeat tags Dumb Ass',
-    )
+    # _name_unique = models.Constraint(
+    #     'unique(name)',
+    #     'Cannot repeat tags Dumb Ass',
+    # )
     #property_ids = fields.One2many('estate.property', 'property_type_id', string='Materials')
