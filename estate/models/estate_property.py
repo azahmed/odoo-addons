@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from odoo.tools import date_utils
+from odoo.tools import date_utils, float_utils
 from odoo import api, fields, models, _
-from odoo.exceptions import UserError
+from odoo.exceptions import UserError, ValidationError
 today = fields.Datetime.now()
 
 class EstateProperty(models.Model):
@@ -86,3 +86,9 @@ class EstateProperty(models.Model):
             if record.state == 'Sold':
                 raise UserError("Already Sold, Cannot be Cancelled")
         return True
+
+    @api.constrains('selling_price')
+    def _check_selling_price(self):
+        for record in self:
+            if float_utils.float_is_zero(record.selling_price):
+                raise ValidationError("Selling Price cannot be zero")
