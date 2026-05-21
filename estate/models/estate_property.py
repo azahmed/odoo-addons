@@ -90,7 +90,7 @@ class EstateProperty(models.Model):
     @api.constrains('selling_price')
     def _check_selling_price(self):
         for record in self:
-            ValidationError("Constraint Man")
+            raise ValidationError("Constraint Man")
             if float_utils.float_is_zero(record.selling_price, precision_digits=2):
                 raise ValidationError("Selling Price cannot be zero")
 
