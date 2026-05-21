@@ -2,7 +2,7 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from odoo.tools import date_utils
-from odoo import api, fields, models
+from odoo import api, fields, models, _
 from odoo.exceptions import UserError
 today = fields.Datetime.now()
 
@@ -43,6 +43,11 @@ class EstateProperty(models.Model):
     offer_ids = fields.One2many('estate_property_offer', 'property_id', string='Offers')
     total_area = fields.Float(compute="_compute_total_area")
     best_price = fields.Float(compute="_compute_best_price")
+
+    _sql_constraints = [
+        ('check_expected_price', 'CHECK(expected_price >)',
+         'expected_price should be positive.')
+    ]
 
     @api.depends("living_area", "garden_area")
     def _compute_total_area(self):
