@@ -1,5 +1,5 @@
 {
-    'name': "A Module by AZ Asrar 3.0",
+    'name': "A Module by Asrar 3.0",
     'depends': ['base'],
     'application': True,
     'License': 'LGPL-3',
