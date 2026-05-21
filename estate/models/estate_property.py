@@ -92,6 +92,7 @@ class EstateProperty(models.Model):
         for record in self:
             if float_is_zero(record.selling_price, precision_digits=2):
                 raise ValidationError("Selling Price cannot be zero")
+            print("selling_price:", record.selling_price, "percentage:", record.selling_price*.9, "diff:", float_compare(record.selling_price, record.selling_price*.9, precision_digits=2))
             if float_compare(record.selling_price, record.selling_price*.9, precision_digits=2) >=0 :
                 raise ValidationError("Some percentage error")
 
