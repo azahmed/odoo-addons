@@ -2,7 +2,7 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 from email.policy import default
 
-from odoo import api, fields, models
+from odoo import api, fields, models, _
 from pkg_resources import require
 from datetime import datetime, timedelta
 from odoo.exceptions import UserError
