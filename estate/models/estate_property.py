@@ -87,13 +87,13 @@ class EstateProperty(models.Model):
                 raise UserError("Already Sold, Cannot be Cancelled")
         return True
 
-    @api.constrains('selling_price')
+    @api.constrains('selling_price', 'expected_price')
     def _check_selling_price(self):
         for record in self:
             # if float_is_zero(record.selling_price, precision_digits=2):
             #     raise ValidationError("Selling Price cannot be zero")
             print("This is Asrar:", "asrar")
-            dodaVar = "Some percentage error :" + "selling_price:" + str(record.selling_price) + "percentage:" + str(record.selling_price*.9) + "diff:"+ str(float_compare(record.selling_price, record.selling_price*.9, precision_digits=2))
+            dodaVar = "Some percentage error :" + "expected_price:" + str(record.expected_price) + " selling_price: " + str(record.selling_price) + " percentage:" + str(record.selling_price*.9) + " diff:"+ str(float_compare(record.selling_price, record.selling_price*.9, precision_digits=2))
             if float_compare(record.selling_price, record.selling_price*.9, precision_digits=2) >=0 :
                 raise ValidationError(dodaVar)
 
