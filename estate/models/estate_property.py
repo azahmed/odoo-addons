@@ -45,8 +45,8 @@ class EstateProperty(models.Model):
     best_price = fields.Float(compute="_compute_best_price")
 
     _sql_constraints = [
-        ('check_expected_price', 'CHECK(expected_price > 0.0)',
-         'expected_price should be positive.')
+        ('check_expected_price', 'CHECK(expected_price > 0.0)', 'Expected Price should be more than 0'),
+        ('check_selling_price', 'CHECK(selling_price > 0.0)', 'Selling Price should be more than 0')
     ]
 
     @api.depends("living_area", "garden_area")
