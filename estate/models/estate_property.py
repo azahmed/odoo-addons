@@ -93,7 +93,7 @@ class EstateProperty(models.Model):
             # if float_is_zero(record.selling_price, precision_digits=2):
             #     raise ValidationError("Selling Price cannot be zero")
             print("This is Asrar:", "asrar")
-            dodaVar = "Some percentage error :" + "selling_price:" + record.selling_price + "percentage:" + record.selling_price*.9 + "diff:"+ float_compare(record.selling_price, record.selling_price*.9, precision_digits=2)
+            dodaVar = "Some percentage error :" + "selling_price:" + str(record.selling_price) + "percentage:" + str(record.selling_price*.9) + "diff:"+ str(float_compare(record.selling_price, record.selling_price*.9, precision_digits=2))
             if float_compare(record.selling_price, record.selling_price*.9, precision_digits=2) >=0 :
                 raise ValidationError(dodaVar)
 
