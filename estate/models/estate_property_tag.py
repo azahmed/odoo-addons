@@ -10,6 +10,9 @@ class EstatePropertyTag(models.Model):
     name = fields.Char(required=True)
     doda = fields.Char()
 
+    _sql_constraints = [
+        ('unique_name', 'UNIQUE(name)', 'The name must be unique!')
+    ]
     # _unique_name = models.Constraint(
     #     'UNIQUE(name)',
     #     'Cannot repeat tags Dumb Ass',
