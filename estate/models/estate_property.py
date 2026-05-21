@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from odoo.tools import date_utils, float_utils
+from odoo.tools import date_utils, float_is_zero, float_compare
 from odoo import api, fields, models, _
 from odoo.exceptions import UserError, ValidationError
 today = fields.Datetime.now()
@@ -90,8 +90,9 @@ class EstateProperty(models.Model):
     @api.constrains('selling_price')
     def _check_selling_price(self):
         for record in self:
-            raise ValidationError("Constraint Man")
-            if float_utils.float_is_zero(record.selling_price, precision_digits=2):
+            if float_is_zero(record.selling_price, precision_digits=2):
                 raise ValidationError("Selling Price cannot be zero")
+            if float_compare(record.selling_price, record.selling_price*.9, precision_digits=2) >=0 :
+                raise ValidationError("Some percentage error")
 
 # any(not float_is_zero(bom_line.cost_share, precision_digits=2) for bom_line in variant_bom_lines),
