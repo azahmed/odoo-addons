@@ -91,5 +91,7 @@ class EstateProperty(models.Model):
     def _check_selling_price(self):
         for record in self:
             ValidationError("Constraint Man")
-            if float_utils.float_is_zero(record.selling_price):
+            if float_utils.float_is_zero(record.selling_price, precision_digits=2):
                 raise ValidationError("Selling Price cannot be zero")
+
+# any(not float_is_zero(bom_line.cost_share, precision_digits=2) for bom_line in variant_bom_lines),
