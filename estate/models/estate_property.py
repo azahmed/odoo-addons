@@ -45,7 +45,7 @@ class EstateProperty(models.Model):
     best_price = fields.Float(compute="_compute_best_price")
 
     _sql_constraints = [
-        ('check_expected_price', 'CHECK(expected_price >)',
+        ('check_expected_price', 'CHECK(expected_price > 0)',
          'expected_price should be positive.')
     ]
 
